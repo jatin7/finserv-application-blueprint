@@ -10,13 +10,29 @@
 
 	<properties>
 		<encoding>UTF-8</encoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<scala.version>2.11.8</scala.version>
-	</properties> 
-    
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<mapr.library.version>6.0.0-mapr</mapr.library.version>
+		<mapr-streams-version>0.9.0.0-mapr-1607</mapr-streams-version>
+		<spark.version>2.1.0-mapr-1710</spark.version>
+		<drill.version>1.11.0-mapr</drill.version>
+		<ojai.version>2.0-mapr-1710</ojai.version>
+		<scala.binary.version>2.11</scala.binary.version>
+	</properties>
+
 	<repositories>
 		<repository>
 			<id>mapr-releases</id>
 			<url>http://repository.mapr.com/maven/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
 		</repository>
 	</repositories>
     
@@ -31,44 +47,44 @@
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-core_2.11</artifactId>
-			<version>2.0.1-mapr-1611</version>
+			<version>${spark.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-sql_2.11</artifactId>
-			<version>2.0.1-mapr-1611</version>
+			<version>${spark.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-mllib_2.11</artifactId>
-			<version>2.0.1-mapr-1611</version>
+			<version>${spark.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-graphx_2.11</artifactId>
-			<version>2.0.1-mapr-1611</version>
+			<version>${spark.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-hive_2.11</artifactId>
-			<version>2.0.1-mapr-1611</version>
+			<version>${spark.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-streaming_2.11</artifactId>
-			<version>2.0.1-mapr-1611</version>
+			<version>${spark.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-streaming-kafka-0-9_2.11</artifactId>
-			<version>2.0.1-mapr-1611</version>
+			<version>${spark.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.kafka</groupId>
 			<artifactId>kafka-clients</artifactId>
-			<version>0.9.0.0-mapr-1607-streams-5.2.0</version>
+			<version>${mapr-streams-version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.apache.zookeeper</groupId>
